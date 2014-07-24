@@ -1,8 +1,13 @@
 {
     "title": "Clock",
     "description": "Defines a simulated clock.",
-    "type": ["array", "object"],
-    "items": { "$ref": "#" },
+    "type": [
+        "array",
+        "object"
+    ],
+    "items": {
+        "$ref": "#"
+    },
     "properties": {
         "currentTime": {
             "$ref": "TimeValue.jsonschema",
