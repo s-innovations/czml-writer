@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Threading;
 
 namespace CesiumLanguageWriter
 {
@@ -1083,6 +1084,8 @@ namespace CesiumLanguageWriter
                     case 'y':
                     case 'Y':
                         pattern = dfi.YearMonthPattern;
+                        if (CultureInfo.CurrentCulture.ToString() == "en-US")
+                            pattern= "MMMM, yyyy";
                         break;
                     default:
                         pattern = null;
