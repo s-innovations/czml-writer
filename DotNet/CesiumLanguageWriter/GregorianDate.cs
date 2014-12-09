@@ -1037,6 +1037,8 @@ namespace CesiumLanguageWriter
                         break;
                     case 'D':
                         pattern = dfi.LongDatePattern;
+                        if (pattern[11] == 'd' && pattern[12] != 'd')
+                            pattern = "dddd, MMMM dd, yyyy";
                         break;
                     case 'f':
                         pattern = dfi.LongDatePattern + " " + dfi.ShortTimePattern;
@@ -1053,6 +1055,8 @@ namespace CesiumLanguageWriter
                     case 'm':
                     case 'M':
                         pattern = dfi.MonthDayPattern;
+                        if (pattern[pattern.Length - 1] == 'd' && pattern[pattern.Length - 2] != 'd')
+                            pattern += "d";
                         break;
                     case 'r':
                     case 'R':
